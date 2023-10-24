@@ -51,8 +51,6 @@ class _CameraScreenState extends State<CameraScreen> {
       for (var j = 0; j < inputSize; j++) {
         var pixel = image.getPixel(j, i);
         buffer[pixelIndex++] = (img.getLuminance(pixel) - mean) / std;
-        //buffer[pixelIndex++] = (img.getGreen(pixel) - mean) / std;
-        //buffer[pixelIndex++] = (img.getBlue(pixel) - mean) / std;
       }
     }
     return convertedBytes.buffer.asUint8List();
@@ -61,22 +59,13 @@ class _CameraScreenState extends State<CameraScreen> {
   loadCNNImage(File imageFile) async {
     var imageBytes = (await rootBundle.load(imageFile.path)).buffer;
     img.Image oriImage = img.grayscale(img.decodeJpg(imageBytes.asUint8List()));
-    //print(anImage);
     img.Image resizeImage = img.copyResize(oriImage, height: 48, width: 48);
-    //var anImage2 = img.encodeJpg(resizeImage);
-    //print(anImage2);
-
-    //print(resizeImage);
-    //print(imageFile.path);
     var modelOutputs = await Tflite.runModelOnBinary(
       binary: imageToByteListFloat32(resizeImage, 48, 0, 255),
       numResults: 7,
       threshold: 0.0,
-      //imageMean: 0.0,
-      //imageStd: 127.7,
     );
     setState(() {
-      //var predictions = modelOutputs.map((json) => Prediction.fromJson(json)).toList();
       print('the model outputs here are $modelOutputs');
       isLoading =  false;
       outputs = modelOutputs;
