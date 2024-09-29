@@ -10,7 +10,7 @@ This is a simple mobile app that makes use of the [Facial Emotion Recognition](h
 
 ## Tech used
 - **Frontend framework**: Flutter
-- **ML Model**: Model from the [Facial Emotion Recognition](https://github.com/juanmartin8a/Facial-Emotion-Recognition) project converted to a Tensorflow Lite model.
+- **ML Model**: Model from the [Facial Emotion Recognition](https://github.com/juanmartin8a/Facial-Emotion-Recognition) project converted to a Tensorflow Lite model
 
 ## Features
 In the app, you can open your phone's gallery to choose a picture that contains a face and the app using the TensorFlow Lite model will classify the face into one of seven emotions. This can also be done by using the in-app camera and taking a picture :)
