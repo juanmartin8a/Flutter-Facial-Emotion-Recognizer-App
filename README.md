@@ -1,4 +1,7 @@
 # Flutter Facial Emotion Recognizer App
+![Started](https://img.shields.io/badge/Started-Jan%202021-blue%20green.svg)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-Jan%202021-blue.svg?color=informational)
+
 This is a simple mobile app that makes use of the [Facial Emotion Recognition](https://github.com/juanmartin8a/Facial-Emotion-Recognition) model made in a previous project.
 
   - ## Why
